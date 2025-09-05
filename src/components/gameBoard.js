@@ -25,13 +25,13 @@ function GameBoard ( props ) {
   useEffect(() => {
     
     if (choiceOne && choiceTwo && choiceOne !== choiceTwo) {
-      setScore(prevScore => prevScore + 10);
       
       setIsDisabled(true);
       if (choiceOne.id === choiceTwo.id && (choiceOne.key !== choiceTwo.key)) {
         setCards (prevCards => {
           return (prevCards.map(card => {
             if (card.id === choiceOne.id) {
+              setScore(prevScore => prevScore + 10);
               return {...card, id: card.id, matched: true};
             } else {
               return card;
@@ -47,24 +47,22 @@ function GameBoard ( props ) {
   }, [choiceOne, choiceTwo, setCards, setScore, selectedSpeed, resetTurn]);
   
   return (
-    <React.StrictMode>
-      <div className="cardBoard">
-        {cards.map(card => (
-          <div className="card" key={card.key}>
-            <div>
-              <Card
-                card={card}
-                content={card.content}
-                handleChoice={handleChoice}
-                flipped={card === choiceOne || card === choiceTwo || card.matched}
-                isDisabled={isDisabled}
-              />
-            </div>
+    <div className="cardBoard">
+      {cards.map(card => (
+        <div className="card" key={card.key}>
+          <div>
+            <Card
+              card={card}
+              content={card.content}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              isDisabled={isDisabled}
+            />
           </div>
-        ))
-        }
-      </div>
-    </React.StrictMode>
+        </div>
+      ))
+      }
+    </div>
   )
 }
 
