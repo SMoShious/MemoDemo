@@ -377,6 +377,7 @@ function App() {
               setCards={setCards}
               turns={turns}
               setTurns={setTurns}
+              handleChoice={handleChoice}
               // setScore={setScore}
 
               selectedSpeed={selectedSpeed}
