@@ -109,7 +109,7 @@ function GameOptions ( props ) {
           <div className="modesBtns">
 
             <ActivableButton
-              label="Memory (Anagrams)"  
+              label="Anagram Hunt"  
               id={1}
               isActive={activeId===1}
               onClick={handleModeSelection}
@@ -117,7 +117,7 @@ function GameOptions ( props ) {
             />
 
             <ActivableButton
-              label="Memory + CPU"
+              label="Math Match"
               id={2}
               isActive={activeId===2}
               onClick={handleModeSelection}
@@ -125,7 +125,7 @@ function GameOptions ( props ) {
               />
 
             <ActivableButton
-              label="Memory + Polyglot"
+              label="Polyglot Pro"
               id={3}
               isActive={activeId===3}
               onClick={handleModeSelection}
@@ -133,7 +133,7 @@ function GameOptions ( props ) {
             />
 
             <ActivableButton 
-              label="Memory + N. Chomsky"
+              label="Lingo-Logic"
               id={4}
               isActive={activeId===4}
               onClick={handleModeSelection}
