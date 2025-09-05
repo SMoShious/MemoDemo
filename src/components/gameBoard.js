@@ -44,7 +44,7 @@ function GameBoard ( props ) {
       }
 
     }
-  }, [choiceOne, choiceTwo, setCards, setScore, selectedSpeed, resetTurn]);
+  }, [choiceOne, choiceTwo, setCards, selectedSpeed, resetTurn]);
   
   return (
     <div className="cardBoard">
