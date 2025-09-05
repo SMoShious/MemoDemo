@@ -12,7 +12,7 @@ function App() {
   const [isModeSelected, setIsModeSelected] = useState(false);
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
   const [selectedDifficulty, setSelectedDifficulty] = useState(1);
   const [selectedMode, setSelectedMode] = useState(null);
@@ -377,7 +377,7 @@ function App() {
               setCards={setCards}
               turns={turns}
               setTurns={setTurns}
-              setScore={setScore}
+              // setScore={setScore}
               
               selectedSpeed={selectedSpeed}
             />

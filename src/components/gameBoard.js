@@ -5,7 +5,7 @@ import "../styles/gameBoard.css";
 
 function GameBoard ( props ) {
 
-  const {cards, setCards, setTurns, selectedSpeed, score, setScore} = props;
+  const {cards, setCards, setTurns, selectedSpeed} = props;
 
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
@@ -25,7 +25,7 @@ function GameBoard ( props ) {
   useEffect(() => {
     
     if (choiceOne && choiceTwo && choiceOne !== choiceTwo) {
-      setScore(prevScore => prevScore + 10);
+      // setScore(prevScore => prevScore + 10);
       
       setIsDisabled(true);
       if (choiceOne.id === choiceTwo.id && (choiceOne.key !== choiceTwo.key)) {
