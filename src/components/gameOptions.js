@@ -97,6 +97,7 @@ function GameOptions ( props ) {
 
   function handleBack () {
     setIsStarted(false);
+    setIsModeSelected(false);
   }
       
   return (
