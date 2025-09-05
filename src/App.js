@@ -436,6 +436,7 @@ function App() {
           {isStarted && !isPlayed &&
             <GameOptions
               setIsModeSelected={setIsModeSelected}
+              isModeSelected={isModeSelected}
               setIsStarted={setIsStarted}
               setIsPlayed={setIsPlayed}
               shuffleCard={shuffleCard}

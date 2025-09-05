@@ -2,7 +2,7 @@ import React from "react";
 
 function ActivableButton ( props ) {
   
-  const {id, label, isActive, isDecorated} = props;
+  const {id, label, isActive, isDecorated, isDisabled, customClassName} = props;
 
   function handleClick () {
     props.onClick(id)
@@ -11,10 +11,16 @@ function ActivableButton ( props ) {
   function handleButtonDecoration (decider) {
     let className = (decider) ? "button buttonBoth" : "button";
 
-    if (isActive)
-      return className + " activeButton";
-    else
-      return className;
+    if (isActive) {
+      className += " activeButton";
+    } else {
+      className += " deactivBtn";
+    }
+    if (customClassName) {
+        className += ` ${customClassName}`;
+    }
+    
+    return className;
   }
 
   return (
@@ -25,6 +31,7 @@ function ActivableButton ( props ) {
           handleButtonDecoration(isDecorated)
         }
         onClick={handleClick}
+        disabled={isDisabled}
       >
         {label}
       </button>

@@ -16,9 +16,9 @@
 
 .infoWindow {
   position: fixed;
-  min-width: 30vw;
+  min-width: 80vw;
   min-height: 80vh;
-  max-width: 30vw;
+  max-width: 80vw;
   max-height: 80vh;
   padding: 0.25rem 0.25rem;
   display: grid;
