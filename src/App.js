@@ -377,7 +377,7 @@ function App() {
               setCards={setCards}
               turns={turns}
               setTurns={setTurns}
-              // setScore={setScore}
+              setScore={setScore}
               
               selectedSpeed={selectedSpeed}
             />
