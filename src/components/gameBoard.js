@@ -15,6 +15,13 @@ function GameBoard ( props ) {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   }, [choiceOne])
 
+    const resetTurn = useCallback(() => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurn => prevTurn + 1);
+    setIsDisabled(false);
+  }, [setTurns])
+  
   useEffect(() => {
     
     if (choiceOne && choiceTwo && choiceOne !== choiceTwo) {
@@ -38,13 +45,6 @@ function GameBoard ( props ) {
 
     }
   }, [choiceOne, choiceTwo, setCards, setScore, selectedSpeed, resetTurn]);
-
-  const resetTurn = useCallback(() => {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setTurns(prevTurn => prevTurn + 1);
-    setIsDisabled(false);
-  }, [setTurns])
   
   return (
     <React.StrictMode>
