@@ -18,6 +18,17 @@ function App() {
   const [selectedMode, setSelectedMode] = useState(null);
   const [selectedSpeed, setSelectedSpeed] = useState(1300);
 
+  const [zIndex, setZIndex] = useState({app: 1, infoWin: 2});
+  const [nextZ, setNextZ] = useState(3);
+
+  const bringToFront = (winName) => {
+    setZIndex(prevZ => ({
+      ...prevZ,
+      [winName]: nextZ
+    }));
+    setNextZ(nextZ + 1);
+  } 
+
   const allCards = {
     anagramSet : {
       cardsEasy : 
@@ -398,9 +409,13 @@ function App() {
 
 
   return (
-    <Draggable bounds='body' handle="topBar">
+    <Draggable bounds='body' handle="topBar" onStart={() => bringToFront('app')}>
 
-      <div className="App">
+      <div 
+        className="App"
+        style={{zIndex: zIndex.app}}
+        onMouseDown={() => bringToFront('app')}
+      >
 
         <topBar className="gameTitle">
           <div>
@@ -428,6 +443,9 @@ function App() {
               setSelectedDifficulty={setSelectedDifficulty}
               setSelectedSpeed={setSelectedSpeed}
               setSelectedMode={setSelectedMode}
+
+              infoZIndex={zIndex.infoWin}
+              bringToFront={() => bringToFront('infoWin')}
             />
           }
 

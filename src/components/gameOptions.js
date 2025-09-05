@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import ActivableButton from "./activableButton.js";
 import "../styles/gameOptions.css";
 import Draggable from "react-draggable";
@@ -6,7 +7,7 @@ import Draggable from "react-draggable";
 function GameOptions ( props ) {
 
   //props
-  const {setIsStarted, setIsPlayed, setIsModeSelected, shuffleCard, setSelectedMode,setSelectedDifficulty, setSelectedSpeed} = props;
+  const {setIsStarted, setIsPlayed, setIsModeSelected, shuffleCard, setSelectedMode,setSelectedDifficulty, setSelectedSpeed, bringToFront, infoZIndex} = props;
   
   
   // difficulty section related codes:
@@ -82,8 +83,11 @@ function GameOptions ( props ) {
   // modes section info related codes:
   const [isInfoOpened, setIsInfoOpened] = useState(false);
 
-  function handleModesInfoClick () {
+  function handleInfoClick () {
     setIsInfoOpened(true);
+  }
+    function handleInfoClose () {
+    setIsInfoOpened(false);
   }
 
   //general button functions:
@@ -103,7 +107,7 @@ function GameOptions ( props ) {
         <div className="mode">
 
           <div className="title modeTitle">
-            <p>Select Mode <span onClick={handleModesInfoClick}><div className="infoIcon"></div></span></p>
+            <p>Select Mode <span onClick={handleInfoClick}><div className="infoIcon"></div></span></p>
           </div>
 
           <div className="modesBtns">
@@ -146,7 +150,7 @@ function GameOptions ( props ) {
 
           <div className="difficulty">
             <div className="title difficultyTitle">
-              <p>Select Difficulty <span><div className="infoIcon" onClick={handleModesInfoClick}></div></span></p>
+              <p>Select Difficulty</p>
             </div>
 
             <input
@@ -161,7 +165,7 @@ function GameOptions ( props ) {
 
           <div className="speed">
             <div className="title speedTitle">
-              <p>Select Speed <span><div className="infoIcon" onClick={handleModesInfoClick}></div></span></p>
+              <p>Select Speed</p>
             </div>
 
             <input
@@ -182,20 +186,28 @@ function GameOptions ( props ) {
         </div>
 
 
-        {isInfoOpened &&
-            <Draggable handle="topBar2" bounds="html">
-              <div className="infoWindow">
+        {isInfoOpened && createPortal (
+            <Draggable
+              handle="topBar2"
+              bounds="html"
+              onStart={bringToFront}
+            >
+              <div
+                className="infoWindow"
+                style={{zIndex: infoZIndex}}
+              >
                 <div className="infoTitle">
                   <topBar2>
-                    <h1>What the hell are these options?</h1>
+                    <h1>What are these modes?</h1> 
                   </topBar2>
                 </div>
                 <div className="infoContent">
                   <p>ok! you are here because you are confused about the modes, they are unclear, and you want to know how they work. ;D</p>
                 </div>
               </div>
-            </Draggable>
-          // </div>
+            </Draggable>,
+            document.body
+        )
         }
 
       </div>

@@ -15,9 +15,7 @@
 }
 
 .infoWindow {
-  position: absolute;
-  z-index: 1;
-
+  position: fixed;
   min-width: 30vw;
   min-height: 80vh;
   max-width: 30vw;
