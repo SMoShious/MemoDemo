@@ -171,3 +171,20 @@
 .gameOptionsBtns button {
   margin: 0 1rem 1rem 1rem;
 }
+
+.infoBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+}
+
+#closeBtn{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  height: 30px;
+  width: 30px;
+}

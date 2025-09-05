@@ -203,8 +203,9 @@ function GameOptions ( props ) {
                 style={{zIndex: infoZIndex}}
               >
                 <div className="infoTitle">
-                  <topBar2>
+                  <topBar2 className="infoBar">
                     <h1>What should I do in each mode?</h1> 
+                    <button className="button closeButton" id="closeBtn" onClick={handleInfoClose}>X</button>
                   </topBar2>
                 </div>
                 <div className="infoContent">
