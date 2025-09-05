@@ -16,9 +16,9 @@
 
 .infoWindow {
   position: fixed;
-  min-width: 80vw;
+  min-width: 30vw;
   min-height: 80vh;
-  max-width: 80vw;
+  max-width: 30vw;
   max-height: 80vh;
   padding: 0.25rem 0.25rem;
   display: grid;
@@ -55,6 +55,11 @@
   width: calc(100% - 1rem);
   display: flex;
   justify-content: center;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #5d4094 #9adeff;
+
   align-content: space-around;
   background-color: var(--secondary-bg-color);
   border: var(--border-thick); 
@@ -65,6 +70,14 @@
   font-size: 1.5rem;
   text-align: justify;
   margin: 0.5rem 0.5rem;
+}
+
+.infoContent h6 {
+  font-family: "DisposableDroidBB", sans-serif;
+  font-size: 1.7rem;
+  text-align: justify;
+  margin: 0.5rem 0.5rem;
+  padding-bottom: 10px;
 }
 
 .infoIcon {

@@ -204,19 +204,19 @@ function GameOptions ( props ) {
               >
                 <div className="infoTitle">
                   <topBar2 className="infoBar">
-                    <h1>What should I do in each mode?</h1> 
+                    <h1>What are these modes?</h1> 
                     <button className="button closeButton" id="closeBtn" onClick={handleInfoClose}>X</button>
                   </topBar2>
                 </div>
                 <div className="infoContent">
                   <p>
-                    <p>1. Anagram Hunt:</p>
+                    <p><h6>1. Anagram Hunt:</h6></p>
                       <p>Think you have a way with words? In this mode, you're not matching identical cards. Instead, you need to find the anagrams! Match words that are made of the same letters, like 'TEAM' and 'MEAT'. It's a test of both your memory and your familiarity with words in general.</p>
-                    <p>2. Math Match:</p>
+                    <p><h6>2. Math Match:</h6></p>
                       <p>Time to put your brain's CPU to the test! ;) Forget matching pictures; here you need to solve the equation on one card and find its correct answer on another. Can you match '6*9' to '54' before you forget where they are? Sharpen your mind as well as your memory in this mode!</p>
-                    <p>3. Polyglot Pro:</p>
+                    <p><h6>3. Polyglot Pro:</h6></p>
                       <p>Ready to go global? Polyglot Pro challenges you to match letters, words, or concepts across different languages and writing systems. You'll need to recognize patterns and make connections beyond your native tongue, like matching the Hebrew letter 'א' to its sound-alike 'A'.</p>
-                    <p>4. Lingo-Logic:</p>
+                    <p><h6>4. Lingo-Logic:</h6></p>
                       <p>For the true language lovers! This mode asks you to match words that share the same ancient root. Can you connect 'Grammar' with 'Diagram'? It's a journey into the history of words that tests not just your memory, but your understanding of where language comes from. A true test for any logophile!</p>
                   </p>
                 </div>
