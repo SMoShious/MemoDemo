@@ -246,7 +246,67 @@ function App() {
           [{content: "9*9"}, {content: "81"}],
           [{content: "9*11"}, {content: "99"}],
         ],
-    } 
+    },
+
+    nchomskySet: {
+      cardsEasy : 
+        [
+          [{content: "Circus"}, {content: "Circle"}],
+          [{content: "Generate"}, {content: "Generic"}],
+          [{content: "History"}, {content: "Story"}],
+          [{content: "Cognition"}, {content: "Recognize"}],
+          [{content: "Vocal"}, {content: "Vowel"}],
+          [{content: "Language"}, {content: "Lingual"}],
+          [{content: "Scribe"}, {content: "Script"}],
+          [{content: "Sign"}, {content: "Signal"}],
+          [{content: "Science"}, {content: "Conscious"}],
+          [{content: "Memory"}, {content: "Remember"}],
+          [{content: "Rational"}, {content: "Ratio"}],
+          [{content: "Synonym"}, {content: "Antonym"}],
+          [{content: "Vision"}, {content: "Evidence"}],
+          [{content: "Credible"}, {content: "Credit"}],
+          [{content: "Assume"}, {content: "Consume"}],
+          [{content: "Lucifer"}, {content: "Luxury"}],
+        ],
+      cardsMedium : 
+        [
+          [{content: "بند"}, {content: "Band"}],
+          [{content: "موش"}, {content: "Mouse"}],
+          [{content: "ستاره"}, {content: "Star"}],
+          [{content: "در"}, {content: "Door"}],
+          [{content: "نو"}, {content: "New"}],
+          [{content: "ایستادن"}, {content: "Stand"}],
+          [{content: "لب"}, {content: "Lip"}],
+          [{content: "ابرو"}, {content: "Eyebrow"}],
+          [{content: "گرم"}, {content: "Warm"}],
+          [{content: "بیوه"}, {content: "Widow"}],
+          [{content: "تو"}, {content: "Thou"}],
+          [{content: "دختر"}, {content: "Daughter"}],
+          [{content: "اندر"}, {content: "Inter-"}],
+          [{content: "بردن"}, {content: "to Bear"}],
+          [{content: "پا"}, {content: "Foot"}],
+          [{content: "یوغ"}, {content: "Yoke"}],
+          [{content: "گاو"}, {content: "Cow"}],
+        ],
+      cardsHard : 
+        [
+          [{content: "Fuß"}, {content: "پا"}],
+          [{content: "میان"}, {content: "Mitte"}],
+          [{content: "ܫܠܡ"}, {content: "سلام"}],
+          [{content: "ارومیه"}, {content: "ܐܘܪܡܝܗ"}],
+          [{content: "Binden"}, {content: "بند"}],
+          [{content: "Licht"}, {content: "Light"}],
+          [{content: "Волк"}, {content: "Wolf"}],
+          [{content: "Дерево"}, {content: "Tree"}],
+          [{content: "Есть"}, {content: "است"}],
+          [{content: "Бог"}, {content: "بغداد"}],
+          [{content: "Домашний"}, {content: "domestic"}],
+          [{content: "Сидеть"}, {content: "to Sit"}],
+          [{content: "aubergine"}, {content: "بادنجان"}],
+          [{content: "مهرگان"}, {content: "مهرجان"}],
+          [{content: "جمل"}, {content: "Camel"}],
+        ],
+    }
   }
   
   function cardStandardizer (card, id) {
