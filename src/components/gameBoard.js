@@ -5,15 +5,15 @@ import "../styles/gameBoard.css";
 
 function GameBoard ( props ) {
 
-  const {cards, setCards, turns, setTurns, selectedSpeed, setScore} = props;
+  const {cards, setCards, setTurns, selectedSpeed, setScore} = props;
 
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [isDisabled, setIsDisabled] = useState(false);
 
-  function handleChoice (card) {
+  const handleChoice = useCallback((card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
-  }
+  }, [choiceOne])
 
   useEffect(() => {
     
@@ -39,12 +39,12 @@ function GameBoard ( props ) {
     }
   }, [choiceOne, choiceTwo, setCards, setScore, selectedSpeed, resetTurn]);
 
-  function resetTurn () {
+  const resetTurn = useCallback(() => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns (prevTurn => prevTurn + 1);
+    setTurns(prevTurn => prevTurn + 1);
     setIsDisabled(false);
-  }
+  }, [setTurns])
   
   return (
     <React.StrictMode>
