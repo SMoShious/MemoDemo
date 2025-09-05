@@ -1,0 +1,71 @@
+import React, { useEffect, useState } from "react";
+import Card from "./card";
+import "../styles/gameBoard.css";
+
+
+function GameBoard ( props ) {
+
+  const {cards, setCards, turns, setTurns, selectedSpeed, setScore} = props;
+
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  function handleChoice (card) {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  }
+
+  useEffect(() => {
+    
+    if (choiceOne && choiceTwo && choiceOne !== choiceTwo) {
+      
+      setIsDisabled(true);
+      if (choiceOne.id === choiceTwo.id && (choiceOne.key !== choiceTwo.key)) {
+        setCards (prevCards => {
+          return (prevCards.map(card => {
+            if (card.id === choiceOne.id) {
+              setScore(prevScore => prevScore + 10);
+              return {...card, id: card.id, matched: true};
+            } else {
+              return card;
+            }
+          }))
+        })
+        resetTurn();
+      } else {
+        setTimeout(() => {resetTurn()}, selectedSpeed);
+      }
+
+    }
+  }, [choiceTwo]);
+
+  function resetTurn () {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns (prevTurn => prevTurn + 1);
+    setIsDisabled(false);
+  }
+  
+  return (
+    <React.StrictMode>
+      <div className="cardBoard">
+        {cards.map(card => (
+          <div className="card" key={card.key}>
+            <div>
+              <Card
+                card={card}
+                content={card.content}
+                handleChoice={handleChoice}
+                flipped={card === choiceOne || card === choiceTwo || card.matched}
+                isDisabled={isDisabled}
+              />
+            </div>
+          </div>
+        ))
+        }
+      </div>
+    </React.StrictMode>
+  )
+}
+
+export default GameBoard;

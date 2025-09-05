@@ -1,0 +1,18 @@
+:root {
+  --cardsNumber: 'not determined here, check app.js';
+}
+
+.cardBoard {
+  /* width: calc(var(--cardsNumber) * 113px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center; */
+  width: 85%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 33% 33% 33%;
+  justify-content: center;
+  align-items: center;
+}

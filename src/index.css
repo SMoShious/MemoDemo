@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Karmatic Arcade";
+  src: url(./fonts/ka1.ttf);
+
+}
+@font-face {
+  font-family: "DisposableDroidBB";
+  src: url(./fonts/DisposableDroidBB.ttf);
+}
+@font-face {
+  font-family: "DisposableDroidBBBold";
+  src: url(./fonts/DisposableDroidBB_bld.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "basis33";
+  src: url(./fonts/basis33.ttf);
+}
+
+* {
+  font-family: "Karmatic Arcade", sans-serif;
+  letter-spacing: 1.5px;
+  cursor: url(./images/Cursor.png), auto;
+  user-select: none;
+}
+
+:root {
+  --border-thick: 3.5px #5d4094 solid;
+  --border-thin: 2.5px #5d4094 solid;
+  --main-bg-color: #9adeff;
+  --secondary-bg-color: #ffc0f0;
+  --main-box-shadow: 15px 15px 2px 2px rgba(0, 0, 0, 0.25);
+  --main-font: "DisposableDroidBB", sans-serif;
+  --secondary-font: "Karmatic Arcade", sans-serif;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+  background-image: url('./images/backgroundBold.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #5d4094; 
+}
+
+.button {
+  width: fit-content;
+  padding: 0px 15px;
+  height: 40px;
+  font-family: "DisposableDroidBB", sans-serif;
+  font-size: 1.7rem;
+  background-color: transparent;
+  border: 2.5px #5d4094 solid;
+  border-radius: 3px;
+  color: #5d4094;
+}
+
+.button:hover {
+  cursor: url(./images/pointer.png), auto;
+}
+
+.button:active {
+  background-color: #9adeff;
+}
+
+.buttonCTA {
+  display: block;
+  background-color: #9adeff;
+}
+
+.buttonCTA:hover {
+  background-color: transparent;
+}
+
+.buttonExtraPadding {
+  padding: 0px 45px;
+}
+
+.activeButton {
+  background-color: #9adeff;
 }

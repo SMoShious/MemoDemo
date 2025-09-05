@@ -1,0 +1,92 @@
+:root {
+  --cards-width: 105px;
+  --cards-height: 136px;
+  --background-size: 105px 136px;
+}
+
+.card {
+  position: relative;
+  margin: 4px 4px;
+}
+
+.cardBack::after {
+  background-image: url('../images/cardShadow.png');
+  background-size: var(--background-size);
+  display: inline-block;
+  width: var(--cards-width);
+  height: var(--cards-height);
+  position: relative;
+  left: -7px;
+  bottom: -7.3px;
+  content: "";
+}
+
+.cardBack {
+  width: var(--cards-width);
+  height: var(--cards-height);
+  background-image: url(../images/cardBack.png);
+  background-size: cover;
+}
+
+.cardFront {
+  width: var(--cards-width);
+  height: var(--cards-height);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-image: url(../images/cardFront.png);
+  background-size: cover;
+
+  /* Unselectablity */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.cardFront p {
+  position: absolute;
+  width: 90%;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--main-font), "basis33";
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.cardFront::before {
+  background-image: url('../images/cardShadow.png');
+  background-size: var(--background-size);
+  display: flex;
+  width: var(--cards-width);
+  height: var(--cards-height);
+  position: relative;
+  left: -7px;
+  bottom: -7.3px;
+  content: "";
+}
+
+.card .cardFront {
+  transform: rotateY(90deg);
+  position: absolute;
+  top: 0px;
+}
+
+.flipped .cardFront {
+  transform: rotateY(0deg);
+  transition-delay: 0.3s;
+}
+
+
+/* double click problem detected */
+.card .cardBack {
+  transition: all ease-in 0.3s;
+  transition-delay: 0s;
+} 
+
+.flipped .cardBack {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
